@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+﻿<!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta charset="utf-8">
@@ -11,66 +11,13 @@
   
   <link href="style.css" rel="stylesheet" type="text/css" media="screen,projection" />
   <link href="images/favicon.svg" rel="icon" />
-  
-  <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-  <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.compatibility.js"></script>
-  <script type="text/javascript" src="http://creativecouple.github.io/jquery-timing/jquery-timing.min.js?v=20130928-164118"></script>
-  <script type="text/javascript">
-  var quotas = [
-    "Radio Limonádový Joe",
-    "90,3 FM",
-    "Vyzkoušejte naši vlnu"
-  ];
 
-  function setSlogan() {
-    var i = 0;
-  
-    window.setInterval(function () {
-        $('#topline .slogan').fadeOut(500, function() {
-          $('#topline .slogan').text(quotas[i]).fadeIn(500);
-        });
-      i = swap(quotas, i);
-    }, 4500);
-  }
-  
-  function swap(quotas, i) {
-      return (i + 1) % quotas.length;
-  }
-  </script>
-  
-  <script type="text/javascript">
-    $(function() {
-      $('a[href*="#"]:not([href="#"])').click(function() {
-        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-          var target = $(this.hash);
-          target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-          if (target.length) {
-            $('html, body').animate({
-              scrollTop: target.offset().top
-            }, 1000);
-            return false;
-          }
-        }
-      });
-    });
-
-    $(window).scroll(function(){ 
-        if ($(this).scrollTop() > 50) {
-            $('#scroll').fadeIn(); 
-            $('#scroll').css("display", "block");
-        } else { 
-            $('#scroll').fadeOut(); 
-            $('#scroll').css("display", "none");
-        } 
-    });
-  </script>
 </head>
 
 <body onload="javascript:setSlogan();">
   <a href="#listen">
     <div id="topline">  
-      <div class="slogan">Radio Limonádový Joe</div>
+      <div class="slogan"></div>
     </div>
   </a>
   
@@ -79,7 +26,7 @@
       <img src="images/logo.svg" alt="logo Radia Limonádový Joe" id="logo" />
     </a>
 
-    <iframe src="http://radio.piratsky.space/public/joe/embed" frameborder="0" allowtransparency="true" style="width: 100%; min-height: 150px; border: 0;"></iframe>
+    <iframe src="https://radio.piratsky.space/public/joe/embed" frameborder="0" allowtransparency="true" style="width: 100%; min-height: 150px; border: 0;"></iframe>
   </div>
   
   <div id="sheep"></div>

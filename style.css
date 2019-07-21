@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,800,800i&subset=latin-ext');
+﻿@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,800,800i&subset=latin-ext');
 
 body {
   font-family: 'Open Sans', sans-serif;
@@ -14,7 +14,7 @@ body {
   background: #d43a77;
   display: table;
   border-bottom: solid 1px #d43a77;
-  animation: pulsate 2s ease-out infinite;
+  animation: pulsate 1s ease-in-out infinite;
 }
 @-webkit-keyframes pulsate {
     0%   { box-shadow: 0 0 5px #d43a77; }
@@ -56,4 +56,20 @@ body {
 
 #logo {
   width: 500px;
+}
+
+.slogan:before {
+    content: "Radio Limonádový Joe";
+    animation: animate infinite 20s;
+}
+@keyframes animate {
+    0% {
+        content: "Radio Limonádový Joe";
+    }
+    33% {
+        content: "90,3 FM";
+    }
+    66% {
+        content: "Vyzkoušejte naši vlnu";
+    }
 }
