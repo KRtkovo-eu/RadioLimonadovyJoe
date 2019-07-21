@@ -50,6 +50,10 @@ body {
   bottom: 0;
   width: 240px;
   height: 140px;
-  background: url('sheep_2.png') no-repeat;
+  background: url('images/sheep_2.png') no-repeat;
   background-position: center center;
+}
+
+#logo {
+  width: 500px;
 }
