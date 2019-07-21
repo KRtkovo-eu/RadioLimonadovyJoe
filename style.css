@@ -52,10 +52,14 @@ body {
   height: 140px;
   background: url('images/sheep_2.png') no-repeat;
   background-position: center center;
+  background-size: contain;
+  display: block;
 }
 
 #logo {
   width: 500px;
+  background-size: contain;
+  margin-bottom: 20px;
 }
 
 .slogan:before {
@@ -71,5 +75,32 @@ body {
     }
     66% {
         content: "Vyzkoušejte naši vlnu";
+    }
+}
+
+
+@media all and (max-width: 768px) {
+    #sheep {
+        width: 102px;
+        height: 60px;
+        display: block;
+    }
+
+    #logo {
+        width: 150px;
+    }
+
+    #topline {
+        height: 25px;
+    }
+
+    #topline .slogan {
+        font-size: 10pt;
+    }
+}
+
+@media all and (max-height: 360px) {
+    #sheep {
+        display: none;
     }
 }
