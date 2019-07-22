@@ -1,4 +1,4 @@
-﻿@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,800,800i&subset=latin-ext');
+﻿@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,800,800i&subset=latin-ext');
 
 body {
   font-family: 'Open Sans', sans-serif;
@@ -45,7 +45,7 @@ body {
 }
 
 #sheep {
-  position: absolute;
+  position: fixed;
   right: 10px;
   bottom: 0;
   width: 240px;
@@ -66,6 +66,7 @@ body {
     content: "Radio Limonádový Joe";
     animation: animate infinite 20s;
 }
+
 @keyframes animate {
     0% {
         content: "Radio Limonádový Joe";
@@ -78,6 +79,26 @@ body {
     }
 }
 
+div.summary {
+    font-size: 10pt;
+    margin: 50px 20px 150px 20px;
+    text-align: left;
+}
+
+h1 {
+    font-weight: 800;
+    font-size: 12pt;
+    text-align: center;
+}
+
+.bottomnote {
+    font-size: 8pt;
+    font-style: italic;
+}
+
+.bold {
+    font-weight: 800;
+}
 
 @media all and (max-width: 768px) {
     #sheep {
