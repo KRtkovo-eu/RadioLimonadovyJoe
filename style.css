@@ -205,6 +205,12 @@ h2 {
     font-weight: 800;
 }
 
+#overDiv *{
+    white-space: pre-line;
+    background-color: #3b2b23;
+    color: #fff;
+}
+
 #sheep {
     position: fixed;
     right: calc(10px);
@@ -215,8 +221,7 @@ h2 {
     background-position: center center;
     background-size: contain;
     display: block;
-  }
-  
+}
 
 @media all and (max-width: 768px) {
     #sheep {
