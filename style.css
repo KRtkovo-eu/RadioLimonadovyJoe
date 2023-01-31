@@ -52,7 +52,7 @@ body {
 }
 
 #logo {
-    padding: 80px 0 0 20px;
+    padding: 60px 0 20px 0;
     text-align: center;
 }
 #topRow #logo {
@@ -237,6 +237,7 @@ h2 {
 #content p img {
     width: 800px;
     margin-bottom: 40px;
+    animation: switchImg infinite 10s;
 }
 @media all and (max-width: 850px) {
     #content p img {
@@ -251,6 +252,14 @@ h2 {
 @media all and (max-width: 450px) {
     #content p img {
         width: 240px;
+    }
+}
+@keyframes switchImg {
+    0% {
+        content: url("images/1328334744_preview_limonadovy_joe.jpg");
+    }
+    50% {
+        content: url("images/1328334744_preview_limonadovy_joe2.jpg");
     }
 }
 
