@@ -53,6 +53,9 @@
       $("#recording-player ul.infoBar li").text("Přehrává se: " + jqueryElem.text());
       $("#recording-player ul.infoBar li").attr('class', '');
       $("#recording-player ul.infoBar li").addClass(jqueryElem.attr("class"));
+
+      $("#content div.recordings li.currentlyPlaying").removeClass("currentlyPlaying");
+      jqueryElem.addClass("currentlyPlaying");
     }
 
     function showOverLib(txtUrl) {
