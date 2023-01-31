@@ -20,6 +20,7 @@ body {
   display: table;
   border-bottom: solid 1px #d43a77;
   /*animation: pulsate 1s ease-in-out infinite;*/
+  z-index: 8000;
 }
 @-webkit-keyframes pulsate {
     0%   { box-shadow: 0 0 5px #d43a77; }
@@ -40,19 +41,35 @@ body {
   text-align: center;
 }
 
-#logo {
-    padding: 40px 0 0 20px;
-
+#topRow {
+    position: fixed;
+    bottom: 80px;
+    width: 100%;
+    background: #f6d482;
+    padding-bottom: 20px;
+    border-top: solid 1px #3b2b23;
+    display: none;
 }
 
+#logo {
+    padding: 80px 0 0 20px;
+    text-align: center;
+}
+#topRow #logo {
+    padding: 10px 0 0 20px;
+    text-align: left;
+}
 #logo img {
-    width: 240px;
+    width: 400px;
+}
+#topRow #logo img {
+    width: 200px;
 }
 
 #recording-player {
     position: absolute;
     right: 20px;
-    top: 50px;
+    top: 10px;
 }
 
 #recording-player audio {
@@ -62,16 +79,19 @@ body {
 @media all and (max-width: 600px) {
     #recording-player {
         position: initial;
-        margin-top: 30px;
     }
 
     #recording-player audio {
         width: 100%;
-    }   
+    }
+
+    #topRow #logo {
+        display: none;
+    }
 }
 
 #content {
-  padding: 20px 0 120px 0;
+  padding: 20px 0 80px 0;
 }
 
 .slogan:before {
@@ -91,7 +111,7 @@ body {
     }
 }
 
-#content div {
+#content div.summary, #content div.recordings {
     font-size: 10pt;
     padding: 10px;
     text-align: left;
@@ -99,8 +119,24 @@ body {
     margin: auto;
 }
 
-#content div.summary {
-    
+#content div.summary div.columns {
+    display: flex;
+}
+
+#content div.summary div.columns p {
+    padding: 0 10px 0 10px;    
+    width: 33%;
+}
+#content div.summary div.columns span.title {
+    font-size: 14pt;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 6px;
+}
+
+#content div.recordings {
+    margin-top: 20px;
+    text-align: center;
 }
 
 #content div.recordings ul, #recording-player ul.infoBar {
@@ -108,10 +144,12 @@ body {
     margin: 0;
     display: flex;
     flex-flow: row wrap;
+    justify-content: center; /* main-axis alignment */
+    align-items: center; /* neither center nor stretch produce desired result */
 }
 
 #content div.recording-show {
-    margin: 0 0 20px 0;
+    margin: 25px 0 50px 0;
 }
 
 #content div.recordings li, #recording-player ul.infoBar li {
@@ -124,9 +162,10 @@ body {
     box-sizing: border-box;
 }
 #recording-player ul.infoBar li {
-    width: 300px;
+    width: 100%;
     font-size: 9pt;
     margin: 10px auto;
+    border-radius: 30px;
 }
 
 #content div.recordings li.dil00, #recording-player ul.infoBar li.dil00 {
@@ -166,8 +205,9 @@ body {
 #content div.recordings li.currentlyPlaying {
     background: #f6d482;
     color: #d43a77;
-    outline: solid 2px #d43a77;
-    outline-offset: -2px;
+    outline: solid 4px #d43a77;
+    outline-offset: -4px;
+    font-weight: bold;
 }
 #content div.recordings li:hover {
     background: #3b2b23;
@@ -191,15 +231,38 @@ h2 {
     font-size: 11pt;
 }
 
+#content p.center {
+    text-align: center;
+}
+#content p img {
+    width: 800px;
+    margin-bottom: 40px;
+}
+@media all and (max-width: 850px) {
+    #content p img {
+        width: 600px;
+    }
+}
+@media all and (max-width: 650px) {
+    #content p img {
+        width: 400px;
+    }
+}
+@media all and (max-width: 450px) {
+    #content p img {
+        width: 240px;
+    }
+}
+
 #footer {
     position: fixed;
     bottom: 0;
-    background: #f6d482;
-    border-top: solid 1px #3b2b23;
-    color: #3b2b23;
+    background: linear-gradient(90deg, rgba(59,43,35,1) 50%, rgba(246,212,130,1) 85%);
+    /*border-top: solid 1px #3b2b23;*/
+    color: #f6d482;
     padding: 10px 40px 10px 40px;
     width: 100%;
-    height: 100px;
+    height: 70px;
 }
 
 .bottomnote, #footer .bold {
@@ -211,32 +274,70 @@ h2 {
     font-weight: 800;
 }
 
-#overDiv *{
+#overDiv * {
     white-space: pre-line;
-    background-color: #3b2b23;
+    background: #3b2b23;
     color: #fff;
 }
-
+#overDiv.dil00 * {
+    background: #f44336;
+}
+#overDiv.dil01 * {
+    background: #e81e63;
+}
+#overDiv.dil02 * {
+    background: #9c27b0;
+}
+#overDiv.dil03 * {
+    background: #673ab7;
+}
+#overDiv.dil04 * {
+    background: #3f51b5;
+}
+#overDiv.dil05 * {
+    background: #1a76c0;
+}
+#overDiv.dil06 * {
+    background: #03a9f4;
+}
+#overDiv.dil07 * {
+    background: #009688;
+}
+#overDiv.dil08 * {
+    background: #4caf50;
+}
+#overDiv.dil09 * {
+    background: #ff9800;
+}
+#overDiv.dil10 * {
+    background: #ff5722;
+}
 
 #sheep {
     position: fixed;
     right: calc(10px);
     bottom: 0px;
-    width: 210px;
-    height: 110px;
+    width: 180px;
+    height: 80px;
     background: url('images/sheep_2.png') no-repeat;
     background-position: center center;
     background-size: contain;
     display: block;
 }
 
-@media all and (max-width: 768px) {
+@media all and (max-width: 1030px) {
     #sheep {
-        width: 102px;
-        height: 60px;
-        display: block;
+        display: none;
     }
-
+    #footer {
+        background: #3b2b23;
+        height: auto;
+    }
+    #footer p {
+        width: 85%;
+    }
+}
+@media all and (max-width: 768px) {
     #logo {
         width: 150px;
     }
@@ -248,6 +349,7 @@ h2 {
     #topline .slogan {
         font-size: 10pt;
     }
+    
 }
 
 @media all and (max-height: 360px) {
