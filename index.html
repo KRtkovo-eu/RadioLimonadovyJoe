@@ -62,7 +62,8 @@
         <h2>Oficiální vysílání obnoveného Radia Limonádový JOE</h2>
         <p class="info"><a href="https://limonadovyjoe.cz/">https://limonadovyjoe.cz/</a></p>
         <ul>
-          <li class="dil00 cast1" onclick="javascript:loadRecording('http://sc.ipip.cz:8212/;&type=mp3', $(this))">Radio Limonádový JOE</li>
+          <!--<li class="dil00 cast1" onclick="javascript:loadRecording('http://sc.ipip.cz:8212/;&type=mp3', $(this))">Radio Limonádový JOE</li>-->
+          <li class="dil00 cast1" onclick="javascript:loadRecording('https://icecast8.play.cz/limonadovyjoe128.mp3', $(this))">Radio Limonádový JOE</li>
         </ul>
       </div>
 
@@ -210,12 +211,17 @@
   <div id="hidden" style="display:none;"></div>
 
   <script type="text/javascript">
+    var firstPlay = false;
     function loadRecording(url, jqueryElem, tracklistUrl) {
       var audio = document.getElementById('audio');
 
       var source = document.getElementById('audioSource');
       source.src = url;
 
+      if(firstPlay == false) {
+        audio.volume = 0.2;
+        firstPlay = true;
+      }
       audio.load(); //call this to just preload the audio without playing
       audio.play(); //call this to play the song right away
 
