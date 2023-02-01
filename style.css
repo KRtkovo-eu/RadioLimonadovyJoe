@@ -365,10 +365,6 @@ h2 {
     }
 }
 @media all and (max-width: 768px) {
-    #logo {
-        width: 150px;
-    }
-
     #topline {
         height: 25px;
     }
@@ -376,7 +372,6 @@ h2 {
     #topline .slogan {
         font-size: 10pt;
     }
-    
 }
 
 @media all and (max-height: 360px) {
