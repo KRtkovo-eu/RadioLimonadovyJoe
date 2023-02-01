@@ -11,6 +11,13 @@ body {
   color: #3b2b23;
 }
 
+a:link, a:visited {
+    color: #1a76c0;
+}
+a:hover {
+    color: #d43a77;
+}
+
 #topline {
   position: fixed;
   top: 0;
@@ -43,10 +50,10 @@ body {
 
 #topRow {
     position: fixed;
-    bottom: 80px;
+    bottom: 90px;
     width: 100%;
-    background: #f6d482;
-    padding-bottom: 20px;
+    background: rgba(246,212,130,0.9);
+    padding-bottom: 10px;
     border-top: solid 1px #3b2b23;
     display: none;
 }
@@ -91,7 +98,7 @@ body {
 }
 
 #content {
-  padding: 20px 0 80px 0;
+  padding: 20px 0 100px 0;
 }
 
 .slogan:before {
@@ -203,16 +210,16 @@ body {
 }
 
 #content div.recordings li.currentlyPlaying {
-    background: #f6d482;
-    color: #d43a77;
-    outline: solid 4px #d43a77;
-    outline-offset: -4px;
-    font-weight: bold;
+    box-shadow: inset 0 0 100px 100px rgba(0, 0, 0, 0.45);
+    outline: solid 1px #fff;
+    outline-offset: -1px;
 }
 #content div.recordings li:hover {
     background: #3b2b23;
-    color: #fff;
     cursor: pointer;
+}
+#content div.recordings li.currentlyPlaying::before {
+    content: '▶ ';
 }
 
 #content p.info {
@@ -266,7 +273,7 @@ h2 {
 #footer {
     position: fixed;
     bottom: 0;
-    background: linear-gradient(90deg, rgba(59,43,35,1) 50%, rgba(246,212,130,1) 85%);
+    background: linear-gradient(90deg, rgba(59,43,35,0.9) 50%, rgba(246,212,130,0.9) 85%);
     /*border-top: solid 1px #3b2b23;*/
     color: #f6d482;
     padding: 10px 40px 10px 40px;
@@ -287,6 +294,17 @@ h2 {
     white-space: pre-line;
     background: #3b2b23;
     color: #fff;
+    padding: 0;
+    margin: 0;
+}
+#overDiv table {
+    padding: 0 5px 5px 5px;
+}
+#overDiv table table:first {
+    padding: 5px;
+}
+#overDiv table table:nth-child(2) td {
+    line-height: 1;
 }
 #overDiv.dil00 * {
     background: #f44336;

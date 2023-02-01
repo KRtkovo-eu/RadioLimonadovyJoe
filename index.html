@@ -233,22 +233,27 @@
 
       $("#topRow").show();
       $("#content").css("padding", "20px 0 230px 0");
-
-
     }
 
     function showOverLib(txtUrl, jqueryElem) {
       var tempElem = $("#hidden");
-      tempElem.load(txtUrl);
-
-      setTimeout(() => {
+      $(document).ready(function(){
         tempElem.load(txtUrl);
 
-        $("#overDiv").attr('class', '');
-        $("#overDiv").addClass(jqueryElem.attr("class"));
-        
-        return overlib(tempElem.text(), AUTOSTATUS, WRAP, CAPTION, 'Informace o nahrávce', ABOVE);
-      }, 150);
+        setTimeout(() => {
+          tempElem.load(txtUrl);
+
+          $("#overDiv").attr('class', '');
+          $("#overDiv").addClass(jqueryElem.attr("class"));
+          
+          if(mouseY < ($(window).height() / 2)) {
+            return overlib(tempElem.text(), AUTOSTATUS, WRAP, CAPTION, 'Informace o nahrávce');
+          }
+          else {
+            return overlib(tempElem.text(), AUTOSTATUS, WRAP, CAPTION, 'Informace o nahrávce', ABOVE);
+          }
+        }, 150);
+      });
     }
     function hideOverLib() {
       nd();
@@ -256,6 +261,11 @@
         nd();
       }, 150);
     }
+
+    var mouseY;
+    $(document).mousemove(function(e) {
+        mouseY = e.pageY - $(window).scrollTop();
+    }).mouseover(); // call the handler immediately
   </script>
 </body>
 </html>
